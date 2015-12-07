@@ -1,0 +1,62 @@
+<template name="upload">
+    <div class="row">
+        <form class="uploadFile">
+            <span class="btn btn-default btn-file">
+        Browse... <input type="file" class="fileSelect">
+        </span>
+            <button type="submit" class="btn btn-primary btn-file">Submit</button>
+        </form>
+    </div>
+    
+    <div class="row">
+       <canvas id="previewImage" class="center-block" style={{#unless previewingFile}}display:none{{/unless}}></canvas>
+    </div>
+
+    {{#if processing}}
+    <div class="row">
+        Processing...
+    </div>
+    {{/if}} 
+    
+    {{#if previewingFile}}
+    <div class="row">
+        <a id="vintage" class="btn btn-primary addFilter btn-filter">Vintage</a>
+
+        <a id="lomo" class="btn btn-primary addFilter btn-filter">Lomo</a>
+
+        <a id="clarity" class="btn btn-primary addFilter btn-filter">Clarity</a>
+
+        <a id="sinCity" class="btn btn-primary addFilter btn-filter">Sin City</a>
+
+        <a id="sunrise" class="btn btn-primary addFilter btn-filter">Sunrise</a>
+
+        <a id="crossProcess" class="btn btn-primary addFilter btn-filter">Cross Process</a>
+
+        <a id="orangePeel" class="btn btn-primary addFilter btn-filter">Orange Peel</a>
+
+        <a id="love" class="btn btn-primary addFilter btn-filter">Love</a>
+
+        <a id="grungy" class="btn btn-primary addFilter btn-filter">Grungy</a>
+
+        <a id="jarques" class="btn btn-primary addFilter btn-filter">Jarques</a>
+
+        <a id="pinhole" class="btn btn-primary addFilter btn-filter">Pinhole</a>
+
+        <a id="oldBoot" class="btn btn-primary addFilter btn-filter">Old Boot</a>
+
+        <a id="glowingSun" class="btn btn-primary addFilter btn-filter">Glowing Sun</a>
+
+        <a id="hazyDays" class="btn btn-primary addFilter btn-filter">Hazy Days</a>
+
+        <a id="herMajesty" class="btn btn-primary addFilter btn-filter">Her Majesty</a>
+
+        <a id="nostalgia" class="btn btn-primary addFilter btn-filter">Nostalgia</a>
+
+        <a id="hemingway" class="btn btn-primary addFilter btn-filter">Hemingway</a>
+
+        <a id="concentrate" class="btn btn-primary addFilter btn-filter">Concentrate</a>
+
+        <a class="reset btn btn-danger btn-filter">Reset</a>
+    </div>
+    {{/if}}
+</template>
