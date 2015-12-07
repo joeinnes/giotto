@@ -2,4 +2,9 @@
 	{{#each images}}
 		{{> single}}
 	{{/each}}
+	{{#if moreResults}}
+		<div id="showMoreResults">
+			<div class="loading">Loading...</div>
+		</div>
+	{{/if}}
 </template>

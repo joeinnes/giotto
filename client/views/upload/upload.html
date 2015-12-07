@@ -8,8 +8,8 @@
     </div>
 
     <div class="row" style={{#unless previewingFile}}display:none{{/unless}}>
-        <div class="thumbnail">
-            <canvas id="previewImage" class="center-block"></canvas>
+        <div class="center-block">
+            <canvas id="previewImage" height="1024" width="1024" class="responsive-img"></canvas>
         </div>
     </div>
 
@@ -61,7 +61,11 @@
     <div class="row">
         <form class="uploadFile">
             <input type="text" class="form-control" id="caption" placeholder="Caption">
-            <button type="submit" class="btn btn-primary btn-file">Submit</button>
+            {{#if processing}}
+                <button type="submit" class="btn btn-primary btn-file" disabled>Submit</button>
+            {{else}}
+                <button type="submit" class="btn btn-primary btn-file">Submit</button>
+            {{/if}}
         </form>
     </div>
     {{/if}}

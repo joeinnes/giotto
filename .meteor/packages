@@ -11,6 +11,7 @@ blaze-html-templates    # Compile .html files into Meteor Blaze views
 session                 # Client-side reactive dictionary for your app
 jquery                  # Helpful client-side library
 tracker                 # Meteor's client-side reactive programming library
+check
 
 standard-minifiers      # JS/CSS minifiers run for production mode
 es5-shim                # ECMAScript 5 compatibility for older browsers.
@@ -35,3 +36,14 @@ accounts-password
 ian:accounts-ui-bootstrap-3
 
 themeteorchef:bert
+
+sacha:spin
+
+jparker:gravatar
+
+mizzao:timesync
+momentjs:moment
+
+arillo:flow-router-helpers
+
+thinksoftware:image-resize-client
