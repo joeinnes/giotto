@@ -1,15 +1,16 @@
 <template name="upload">
     <div class="row">
-        <form class="uploadFile">
+        <div class="center-block">
             <span class="btn btn-default btn-file">
-        Browse... <input type="file" class="fileSelect">
-        </span>
-            <button type="submit" class="btn btn-primary btn-file">Submit</button>
-        </form>
+                Browse... <input type="file" class="fileSelect">
+            </span>
+        </div>
     </div>
-    
-    <div class="row">
-       <canvas id="previewImage" class="center-block" style={{#unless previewingFile}}display:none{{/unless}}></canvas>
+
+    <div class="row" style={{#unless previewingFile}}display:none{{/unless}}>
+        <div class="thumbnail">
+            <canvas id="previewImage" class="center-block"></canvas>
+        </div>
     </div>
 
     {{#if processing}}
@@ -17,7 +18,6 @@
         Processing...
     </div>
     {{/if}} 
-    
     {{#if previewingFile}}
     <div class="row">
         <a id="vintage" class="btn btn-primary addFilter btn-filter">Vintage</a>
@@ -57,6 +57,12 @@
         <a id="concentrate" class="btn btn-primary addFilter btn-filter">Concentrate</a>
 
         <a class="reset btn btn-danger btn-filter">Reset</a>
+    </div>
+    <div class="row">
+        <form class="uploadFile">
+            <input type="text" class="form-control" id="caption" placeholder="Caption">
+            <button type="submit" class="btn btn-primary btn-file">Submit</button>
+        </form>
     </div>
     {{/if}}
 </template>

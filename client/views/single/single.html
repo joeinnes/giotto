@@ -1,9 +1,13 @@
 <template name="single">
   <div class="thumbnail">
-    <img src="..." alt="...">
+    <img src="{{this.url}}" class="responsive-img">
     <div class="caption">
-      <p>...</p>
+      <p>{{this.metadata.caption}}</p>
+      <p>Original extension: {{this.extension}}</p>
+      <p>Original type: {{this.type}}</p>
+      <p>Original size: {{this.size}}</p>
       <p><a href="#" class="btn btn-default" role="button">Like</a></p>
     </div>
   </div>
 </template>
+

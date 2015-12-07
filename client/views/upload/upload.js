@@ -70,20 +70,32 @@ Template.upload.events({
     console.log('Yup, uploading');
     var canvas = document.getElementById("previewImage");
     var dataurl = canvas.toDataURL("image/jpeg", 0.85);
+    var caption = document.getElementById("caption").value;
+    var toInsert = new FS.File(dataurl);
+		toInsert.metadata = {
+			caption: caption
+		};
 
-    /*Images.insert(dataurl, function (err, fileObj) {
-      console.log('Inserted ' + fileObj._id);
-      // Inserted new doc with ID fileObj._id, and kicked off the data upload using HTTP
-    });*/
-    Bert.alert('Nice! Uploaded your image', 'success', 'growl-top-right');
+		Meteor.call('insertImage', toInsert, function (err, fileObj) {
+      if (!err) {
+        Bert.alert('Nice! Uploaded your image', 'success', 'growl-top-right');
+      } else {
+        Bert.alert({
+          title: 'Couldn\'t upload',
+          message: 'The error was ' + err,
+          type: 'danger',
+          style: 'growl-top-right'
+        });
+      }  
+    });
+    
     console.log(dataurl);
   },
   'click .addFilter': function(event) {
     Session.set('processing', true);
     var filterToApply = event.target.id;
-    Caman("#previewImage", function(strength) { 
-      var strength = strength || 50;
-      this[filterToApply](strength).render(function() {
+    Caman("#previewImage", function() { 
+      this[filterToApply]().render(function() {
         Session.set('processing', false);
        }); 
     });

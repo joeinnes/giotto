@@ -1,7 +1,6 @@
 /* global imageStore */
 /* global Images */
-var imageStore = new FS.Store.GridFS("images", {
-});
+var imageStore = new FS.Store.GridFS("images", {});
 
 Images = new FS.Collection("images", {
   stores: [imageStore]
