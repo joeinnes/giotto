@@ -1,0 +1,23 @@
+<template name="navbarBottom">
+  <nav class="navbar navbar-default navbar-inverse navbar-fixed-bottom visible-xs-block hidden-sm">
+    <div class="container-fluid">
+      <div class="row icons">
+        <div class="navbar-left col-xs-4">
+          <center>
+            <a href="{{pathFor 'timeline'}}"><i class="fa fa-home navbar-bottom-icon"></i></a>
+          </center>
+        </div>
+        <div class="col-xs-4 center-icon">
+          <center>
+            <a href="{{pathFor 'upload'}}"><i class="fa fa-camera-retro"></i></a>
+          </center>
+        </div>
+        <div class="navbar-right col-xs-4">
+          <center>
+            <a href="{{pathFor 'me'}}"><i class="fa fa-user navbar-bottom-icon"></i></a>
+          </center>
+        </div>
+      </div>
+    </div>
+  </nav>
+</template>

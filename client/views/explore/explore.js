@@ -1,6 +1,6 @@
 Template.explore.helpers({
 	images: function () {
-		return Images.find({});
+		return Images.find({}, {sort: {'metadata.createdAt': -1}});
 	},
 	moreResults: function () {
 		return !(Images.find().count() < Session.get("itemsLimit"));

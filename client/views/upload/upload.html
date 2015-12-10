@@ -1,70 +1,88 @@
 <template name="upload">
+    {{#unless previewingFile}}
     <div class="row">
         <div class="center-block">
-            <span class="btn btn-default btn-file">
-                Browse... <input type="file" class="fileSelect">
-            </span>
+            <center>
+                <span class="btn btn-default btn-lg btn-file">
+                        Browse... <input type="file" class="fileSelect">
+                    </span>
+            </center>
         </div>
     </div>
+    {{/unless}}
 
     <div class="row" style={{#unless previewingFile}}display:none{{/unless}}>
         <div class="center-block">
-            <canvas id="previewImage" height="1024" width="1024" class="responsive-img"></canvas>
+            <img id="previewImage" class="{{filters}} img-responsive">
         </div>
     </div>
 
-    {{#if processing}}
-    <div class="row">
-        Processing...
-    </div>
-    {{/if}} 
     {{#if previewingFile}}
     <div class="row">
-        <a id="vintage" class="btn btn-primary addFilter btn-filter">Vintage</a>
-
-        <a id="lomo" class="btn btn-primary addFilter btn-filter">Lomo</a>
-
-        <a id="clarity" class="btn btn-primary addFilter btn-filter">Clarity</a>
-
-        <a id="sinCity" class="btn btn-primary addFilter btn-filter">Sin City</a>
-
-        <a id="sunrise" class="btn btn-primary addFilter btn-filter">Sunrise</a>
-
-        <a id="crossProcess" class="btn btn-primary addFilter btn-filter">Cross Process</a>
-
-        <a id="orangePeel" class="btn btn-primary addFilter btn-filter">Orange Peel</a>
-
-        <a id="love" class="btn btn-primary addFilter btn-filter">Love</a>
-
-        <a id="grungy" class="btn btn-primary addFilter btn-filter">Grungy</a>
-
-        <a id="jarques" class="btn btn-primary addFilter btn-filter">Jarques</a>
-
-        <a id="pinhole" class="btn btn-primary addFilter btn-filter">Pinhole</a>
-
-        <a id="oldBoot" class="btn btn-primary addFilter btn-filter">Old Boot</a>
-
-        <a id="glowingSun" class="btn btn-primary addFilter btn-filter">Glowing Sun</a>
-
-        <a id="hazyDays" class="btn btn-primary addFilter btn-filter">Hazy Days</a>
-
-        <a id="herMajesty" class="btn btn-primary addFilter btn-filter">Her Majesty</a>
-
-        <a id="nostalgia" class="btn btn-primary addFilter btn-filter">Nostalgia</a>
-
-        <a id="hemingway" class="btn btn-primary addFilter btn-filter">Hemingway</a>
-
-        <a id="concentrate" class="btn btn-primary addFilter btn-filter">Concentrate</a>
-
-        <a class="reset btn btn-danger btn-filter">Reset</a>
+        <div class="col-xs-3 col-md-2">
+            <a id="1977" class="btn btn-primary addFilter btn-filter">1977</a>
+        </div>
+        <div class="col-xs-3 col-md-2">
+            <a id="xpro2" class="btn btn-primary addFilter btn-filter">X-Pro 2</a>
+        </div>
+        <div class="col-xs-3 col-md-2">
+            <a id="walden" class="btn btn-primary addFilter btn-filter">Walden</a>
+        </div>
+        <div class="col-xs-3 col-md-2">
+            <a id="valencia" class="btn btn-primary addFilter btn-filter">Valencia</a>
+        </div>
+        <div class="col-xs-3 col-md-2">
+            <a id="toaster" class="btn btn-primary addFilter btn-filter">Toaster</a>
+        </div>
+        <div class="col-xs-3 col-md-2">
+            <a id="sutro" class="btn btn-primary addFilter btn-filter">Sutro</a>
+        </div>
+        <div class="col-xs-3 col-md-2">
+            <a id="sierra" class="btn btn-primary addFilter btn-filter">Sierra</a>
+        </div>
+        <div class="col-xs-3 col-md-2">
+            <a id="rise" class="btn btn-primary addFilter btn-filter">Rise</a>
+        </div>
+        <div class="col-xs-3 col-md-2">
+            <a id="nashville" class="btn btn-primary addFilter btn-filter">Nashville</a>
+        </div>
+        <div class="col-xs-3 col-md-2">
+            <a id="mayfair" class="btn btn-primary addFilter btn-filter">Mayfair</a>
+        </div>
+        <div class="col-xs-3 col-md-2">
+            <a id="lofi" class="btn btn-primary addFilter btn-filter">Lo-Fi</a>
+        </div>
+        <div class="col-xs-3 col-md-2">
+            <a id="kelvin" class="btn btn-primary addFilter btn-filter">Kelvin</a>
+        </div>
+        <div class="col-xs-3 col-md-2">
+            <a id="inkwell" class="btn btn-primary addFilter btn-filter">Inkwell</a>
+        </div>
+        <div class="col-xs-3 col-md-2">
+            <a id="hudson" class="btn btn-primary addFilter btn-filter">Hudson</a>
+        </div>
+        <div class="col-xs-3 col-md-2">
+            <a id="hefe" class="btn btn-primary addFilter btn-filter">Hefe</a>
+        </div>
+        <div class="col-xs-3 col-md-2">
+            <a id="earlybird" class="btn btn-primary addFilter btn-filter">Earlybird</a>
+        </div>
+        <div class="col-xs-3 col-md-2">
+            <a id="brannan" class="btn btn-primary addFilter btn-filter">Brannan</a>
+        </div>
+        <div class="col-xs-3 col-md-2">
+            <a id="amaro" class="btn btn-primary addFilter btn-filter">Amaro</a>
+        </div>
+        <div class="col-xs-3 col-md-2">
+            <a class="reset btn btn-danger btn-filter">Reset</a>
+        </div>
     </div>
     <div class="row">
         <form class="uploadFile">
-            <input type="text" class="form-control" id="caption" placeholder="Caption">
-            {{#if processing}}
-                <button type="submit" class="btn btn-primary btn-file" disabled>Submit</button>
+            <input type="text" class="form-control" id="caption" placeholder="Caption"> {{#if processing}}
+            <button type="submit" class="btn btn-primary btn-file" disabled>Submit</button>
             {{else}}
-                <button type="submit" class="btn btn-primary btn-file">Submit</button>
+            <button type="submit" class="btn btn-primary btn-file">Submit</button>
             {{/if}}
         </form>
     </div>

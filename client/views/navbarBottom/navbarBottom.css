@@ -1,0 +1,19 @@
+body {
+	padding-bottom: 70px;
+}
+
+.center-icon {
+	background-color: #eee;
+}
+
+.icons {
+	font-size: 45px;
+}
+
+.navbar-bottom-icon {
+	color: #eee;
+}
+
+.navbar-bottom-icon:hover {
+	color: #ddd;
+}

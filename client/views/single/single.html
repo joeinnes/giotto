@@ -1,11 +1,10 @@
 <template name="single">
   <div class="thumbnail">
-    <img src="{{this.url}}" class="responsive-img">
+    <img src="{{this.url}}" class="responsive-img {{filters}}">
     <div>
       <p>{{this.metadata.caption}}</p>
-      <p>{{this.metadata.username}}</p>
+      <p>Taken by @{{this.metadata.username}}</p>
       <p>{{createdAtTime this.metadata.createdAt}}</p>
-      <p>Original size: {{this.size}}</p>
       <p><a href="#" class="btn btn-default" role="button">Like</a></p>
     </div>
   </div>

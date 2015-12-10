@@ -46,4 +46,4 @@ momentjs:moment
 
 arillo:flow-router-helpers
 
-thinksoftware:image-resize-client
+ccorcos:clientside-image-manipulation
