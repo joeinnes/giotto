@@ -24,7 +24,7 @@ FlowRouter.route('/explore', {
 FlowRouter.route('/me', {
     name: 'me',
     action: function () {
-        BlazeLayout.render("main", { content: "explore" });
+        BlazeLayout.render("main", { content: "profile" });
     }
 });
 

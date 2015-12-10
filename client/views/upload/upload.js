@@ -28,7 +28,6 @@ Template.upload.helpers({
 
 Template.upload.events({
   'change .fileSelect': function (event, template) {
-    Session.set('previewing', true);
     Session.set('processing', true);
     FS.Utility.eachFile(event, function (file) {
       if (!file.type.match(/image.*/)) {
@@ -44,6 +43,7 @@ Template.upload.events({
           //renderedImg.src = img.src;
           console.log('callback fired');
           renderedImg.src = data;
+          Session.set('previewing', true);
           Session.set('processing', false);
         });
       }

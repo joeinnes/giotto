@@ -1,5 +1,5 @@
 body {
-	padding-bottom: 70px;
+	padding-bottom: 60px;
 }
 
 .center-icon {
@@ -7,7 +7,9 @@ body {
 }
 
 .icons {
-	font-size: 45px;
+	font-size: 35px;
+	padding: 0px;
+	line-height: 60px;
 }
 
 .navbar-bottom-icon {
@@ -16,4 +18,9 @@ body {
 
 .navbar-bottom-icon:hover {
 	color: #ddd;
+}
+
+.navbar .navbar-default .navbar-inverse .navbar-fixed-bottom {
+	height: 60px;
+	border: 0px;
 }
